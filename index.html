@@ -139,17 +139,65 @@
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4 md:p-8">
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8 pb-32">
 
-    <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 pb-20 lg:pb-0">
+    <!-- Container GRID aplati pour permettre le réagencement -->
+    <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6">
 
-        <!-- BLOC 1 (Gauche) : Le Visuel -->
-        <div class="bento-card col-span-1 lg:col-span-5 rounded-3xl p-6 lg:p-8 relative overflow-hidden flex items-center justify-center order-2 lg:order-1">
+        <!-- 
+           ORDRE MOBILE DÉSIRÉ :
+           1. Titre & Features
+           2. Vidéo (Téléphone)
+           3. Option Sérénité
+           4. Prix & CTA
+        -->
+
+        <!-- 1. BLOC FEATURES (Mobile: Order 1 | Desktop: Droite, Order 2) -->
+        <div class="bento-card col-span-1 lg:col-span-7 order-1 lg:order-2 rounded-3xl p-6 lg:p-10 flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-blue-50 dark:bg-blue-900/30 rounded-full blur-2xl opacity-60 transition-colors duration-500"></div>
+            
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold tracking-wide w-max mb-4 uppercase transition-colors duration-300">Nouvelle Tendance</span>
+            
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight transition-colors duration-300">
+                Mini App E-commerce <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">pour Telegram</span>
+            </h1>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
+                    <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Personnalisation illimitée</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
+                    <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Produits illimités</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
+                    <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Tous vos réseaux</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
+                    <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Commande WhatsApp/TG</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
+                    <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Fond animé Logo</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
+                    <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Panel Admin complet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. BLOC TÉLÉPHONE/VIDÉO (Mobile: Order 2 | Desktop: Gauche, Order 1, prend toute la hauteur) -->
+        <div class="bento-card col-span-1 lg:col-span-5 lg:row-span-3 order-2 lg:order-1 rounded-3xl p-6 lg:p-8 relative overflow-hidden flex items-center justify-center h-full min-h-[400px] lg:min-h-auto">
             <div class="tech-bg"></div>
             <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 dark:bg-blue-900 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 transition-colors duration-500"></div>
             <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-100 dark:bg-indigo-900 rounded-full blur-3xl opacity-50 -ml-16 -mb-16 transition-colors duration-500"></div>
 
-            <div class="phone-mockup z-10">
+            <div class="phone-mockup z-10 relative">
                 <div class="phone-notch"></div>
                 <div class="phone-screen">
                     <!-- VIDEO PLAYER -->
@@ -164,90 +212,44 @@
             </div>
         </div>
 
-        <!-- Colonne Droite (Contenu) -->
-        <div class="col-span-1 lg:col-span-7 flex flex-col gap-4 lg:gap-6 order-1 lg:order-2">
-
-            <!-- BLOC 2 : Titre & Features -->
-            <div class="bento-card rounded-3xl p-6 lg:p-10 flex flex-col justify-center h-full relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-blue-50 dark:bg-blue-900/30 rounded-full blur-2xl opacity-60 transition-colors duration-500"></div>
-                
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-bold tracking-wide w-max mb-4 uppercase transition-colors duration-300">Nouvelle Tendance</span>
-                
-                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight transition-colors duration-300">
-                    Mini App E-commerce <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">pour Telegram</span>
-                </h1>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
-                        <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Personnalisation illimitée</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
-                        <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Produits illimités</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
-                        <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Tous vos réseaux</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
-                        <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Commande WhatsApp/TG</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
-                        <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Fond animé Logo</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"><i class="ph-bold ph-check"></i></div>
-                        <span class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium">Panel Admin complet</span>
-                    </div>
-                </div>
+        <!-- 3. BLOC SÉRÉNITÉ (Mobile: Order 3 | Desktop: Droite, Order 3) -->
+        <div id="serenite-option" onclick="toggleSerenite()" class="bento-card col-span-1 lg:col-span-7 order-3 lg:order-3 cursor-pointer relative rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 border border-amber-100 dark:border-slate-700 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 transition-all duration-300 select-none group">
+            
+            <div id="serenite-check" class="check-anim absolute top-3 right-3 sm:top-5 sm:right-5 w-6 h-6 rounded-full border-2 border-orange-300 dark:border-slate-500 flex items-center justify-center text-white bg-white dark:bg-transparent">
+                <i class="ph-bold ph-check text-sm opacity-0 check-anim"></i>
             </div>
 
-            <!-- BLOC 3 : Option Sérénité SÉLECTIONNABLE -->
-            <!-- Ajout des ID, de l'événement onclick et de la checkbox -->
-            <div id="serenite-option" onclick="toggleSerenite()" class="bento-card cursor-pointer relative rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 border border-amber-100 dark:border-slate-700 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 transition-all duration-300 select-none group">
-                
-                <!-- Indicateur de sélection (Checkbox) -->
-                <div id="serenite-check" class="check-anim absolute top-3 right-3 sm:top-5 sm:right-5 w-6 h-6 rounded-full border-2 border-orange-300 dark:border-slate-500 flex items-center justify-center text-white bg-white dark:bg-transparent">
-                    <i class="ph-bold ph-check text-sm opacity-0 check-anim"></i>
-                </div>
-
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center text-orange-500 text-xl sm:text-2xl shrink-0 shadow-sm">
-                    <i class="ph-fill ph-star"></i>
-                </div>
-                <div class="text-center sm:text-left pr-6 sm:pr-0">
-                    <h3 class="font-bold text-slate-800 dark:text-slate-100 text-base sm:text-lg">Option Sérénité</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">Cliquer pour ajouter : Hébergement inclus (+50€/mois)</p>
-                </div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center text-orange-500 text-xl sm:text-2xl shrink-0 shadow-sm">
+                <i class="ph-fill ph-star"></i>
             </div>
-
-            <!-- BLOC 4 : Prix & CTA -->
-            <div class="bento-card rounded-3xl p-6 lg:p-8 bg-slate-900 dark:bg-blue-950 text-white flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden transition-colors duration-300">
-                <div class="absolute right-0 bottom-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
-
-                <div class="text-center md:text-left z-10 w-full md:w-auto">
-                    <p class="text-slate-400 text-xs sm:text-sm font-medium mb-1 uppercase tracking-wider">Investissement unique</p>
-                    <div class="flex items-baseline justify-center md:justify-start gap-1">
-                        <span class="text-4xl sm:text-5xl font-extrabold text-white">350€</span>
-                        <span class="text-slate-400 font-medium text-sm sm:text-base">/création</span>
-                    </div>
-                    <!-- Zone de prix mensuel dynamique -->
-                    <div id="monthly-price-container" class="mt-2 text-xs sm:text-sm text-slate-300 bg-slate-800/50 py-1 px-3 rounded-lg inline-block transition-colors duration-300">
-                        Hébergement : <strong>15€/mois</strong>
-                    </div>
-                </div>
-
-                <!-- Bouton transformé en lien interactif -->
-                <a id="cta-button" href="https://t.me/dailyhash?text=Bonjour%2C%20je%20souhaite%20commander%20une%20Mini%20App%20Basique" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold py-4 px-6 sm:px-8 rounded-xl transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2 z-10 w-full md:w-auto group touch-manipulation no-underline">
-                    Commander
-                    <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                </a>
+            <div class="text-center sm:text-left pr-6 sm:pr-0">
+                <h3 class="font-bold text-slate-800 dark:text-slate-100 text-base sm:text-lg">Option Sérénité</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">Cliquer pour ajouter : Hébergement inclus (+50€/mois)</p>
             </div>
-
         </div>
+
+        <!-- 4. BLOC PRIX & CTA (Mobile: Order 4 | Desktop: Droite, Order 4) -->
+        <div class="bento-card col-span-1 lg:col-span-7 order-4 lg:order-4 rounded-3xl p-6 lg:p-8 bg-slate-900 dark:bg-blue-950 text-white flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden transition-colors duration-300">
+            <div class="absolute right-0 bottom-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
+
+            <div class="text-center md:text-left z-10 w-full md:w-auto">
+                <p class="text-slate-400 text-xs sm:text-sm font-medium mb-1 uppercase tracking-wider">Investissement unique</p>
+                <div class="flex items-baseline justify-center md:justify-start gap-1">
+                    <span class="text-4xl sm:text-5xl font-extrabold text-white">350€</span>
+                    <span class="text-slate-400 font-medium text-sm sm:text-base">/création</span>
+                </div>
+                <div id="monthly-price-container" class="mt-2 text-xs sm:text-sm text-slate-300 bg-slate-800/50 py-1 px-3 rounded-lg inline-block transition-colors duration-300">
+                    Hébergement : <strong>15€/mois</strong>
+                </div>
+            </div>
+
+            <!-- Bouton CTA : Visibilité forcée, z-index élevé, bordure légère pour contraste -->
+            <a id="cta-button" href="https://t.me/dailyhash?text=Bonjour%2C%20je%20souhaite%20commander%20une%20Mini%20App%20Basique" target="_blank" rel="noopener noreferrer" class="relative z-20 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold py-4 px-6 sm:px-8 rounded-xl transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2 w-full md:w-auto group touch-manipulation no-underline border border-white/10">
+                Commander
+                <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+
     </div>
 
     <!-- Bouton Toggle Thème -->
@@ -271,21 +273,17 @@
 
             if (isSereniteSelected) {
                 // ACTIVÉ
-                // Bordure orange et fond légèrement plus foncé en mode sombre
                 optionBlock.classList.remove('border-amber-100', 'dark:border-slate-700');
                 optionBlock.classList.add('border-orange-500', 'ring-1', 'ring-orange-500', 'bg-orange-50', 'dark:bg-slate-700');
                 
-                // Checkbox active
                 checkCircle.classList.remove('bg-white', 'dark:bg-transparent', 'border-orange-300', 'dark:border-slate-500');
                 checkCircle.classList.add('bg-orange-500', 'border-orange-500');
                 checkIcon.classList.remove('opacity-0');
 
-                // Prix
                 monthlyPriceContainer.innerHTML = 'Option Sérénité : <strong class="text-orange-400">50€/mois</strong> (Hébergement inclus)';
                 monthlyPriceContainer.classList.remove('text-slate-300', 'bg-slate-800/50');
                 monthlyPriceContainer.classList.add('text-orange-100', 'bg-orange-900/50');
 
-                // Lien
                 ctaButton.href = "https://t.me/dailyhash?text=Bonjour%2C%20je%20souhaite%20commander%20une%20Mini%20App%20Basique%20AVEC%20Option%20Sérénité";
 
             } else {
